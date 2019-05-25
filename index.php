@@ -20,3 +20,11 @@ elseif (isset($_POST['delete']))
   $sth->bindValue(':id', $id, PDO::PARAM_INT);
   $sth->execute();
 }
+# Update completion status
+elseif (isset($_POST['complete']))
+{
+    $id = $_POST['id'];
+    $sth = $pdo->prepare("UPDATE todos SET complete = 1 where id = :id");
+    $sth->bindValue(':id', $id, PDO::PARAM_INT);
+    $sth->execute();
+}
