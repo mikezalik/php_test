@@ -57,3 +57,19 @@ foreach ($sth as $row) {
   <td>
       <?=htmlspecialchars($row['description'])?></td>
   <td>
+
+  <?php
+if (!$row['complete']) {
+        ?>
+    <form method="POST">
+      <button type="submit" name="complete">Complete</button>
+      <input type="hidden" name="id" value="<?=$row['id']?>">
+      <input type="hidden" name="complete" value="true">
+    </form>
+    <?php
+} else {
+        ?>
+    Task Complete.
+    <?php
+}
+    ?>
