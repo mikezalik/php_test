@@ -46,3 +46,14 @@ elseif (isset($_POST['complete']))
   <table class="table table-striped">
     <thead><th>Task</th><th></th><th></th></thead>
     <tbody>
+<?php
+
+$sth = $pdo->prepare("SELECT * FROM todos ORDER BY id DESC");
+$sth->execute();
+
+foreach ($sth as $row) {
+    ?> 
+<tr>
+  <td>
+      <?=htmlspecialchars($row['description'])?></td>
+  <td>
