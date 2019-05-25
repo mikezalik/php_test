@@ -82,3 +82,10 @@ if (!$row['complete']) {
     </form>
   </td>
 </tr>
+<?php
+}
+?>
+    </tbody>
+  </table>
+</body>
+</html>
