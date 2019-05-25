@@ -58,7 +58,7 @@ foreach ($sth as $row) {
       <?=htmlspecialchars($row['description'])?></td>
   <td>
 
-  <?php
+<?php
 if (!$row['complete']) {
         ?>
     <form method="POST">
@@ -73,3 +73,12 @@ if (!$row['complete']) {
     <?php
 }
     ?>
+  </td>
+  <td>
+    <form method="POST">
+      <button type="submit" name="delete">Delete</button>
+      <input type="hidden" name="id" value="<?=$row['id']?>">
+      <input type="hidden" name="delete" value="true">
+    </form>
+  </td>
+</tr>
